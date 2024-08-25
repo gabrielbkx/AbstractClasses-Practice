@@ -23,9 +23,9 @@ public class PessoaJuridica extends Pessoa{
     @Override
     public double tax(){
         double tax = 0.16;
-        if (numberOfEmployees > 10) {
+        if (getNumberOfEmployees() > 10) {
             tax = 0.14;
         }
-        return anualIncome * tax;
+        return getNumberOfEmployees() * tax;
     }
 }

@@ -23,15 +23,15 @@ public class PessoaFisica extends Pessoa {
     @Override
     public final double tax() {
         double tax = 0;
-        if ( anualIncome < 20000.00){
+        if ( getAnualIncome() < 20000.00){
              tax = 0.15;
-        }else if (anualIncome >= 20000.00){
+        }else if (getAnualIncome() >= 20000.00){
              tax = 0.25;
         }
-        if (healthexpenditures != null){
-            return (anualIncome * tax) - (healthexpenditures * 0.50);
+        if (getHealthexpenditures() != null){
+            return (getAnualIncome() * tax) - (getHealthexpenditures() * 0.50);
         }else {
-            return anualIncome * tax;
+            return getAnualIncome() * tax;
         }
     }
 }
