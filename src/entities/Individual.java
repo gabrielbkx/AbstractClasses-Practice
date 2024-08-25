@@ -1,13 +1,13 @@
 package entities;
 
-public class PessoaFisica extends Pessoa {
+public class Individual extends TaxPayer {
     private Double healthexpenditures;
 
-    public PessoaFisica() {
+    public Individual() {
         super();
     }
 
-    public PessoaFisica(String name, Double anualCome, Double healthexpenditures) {
+    public Individual(String name, Double anualCome, Double healthexpenditures) {
         super(name, anualCome);
         this.healthexpenditures = healthexpenditures;
     }

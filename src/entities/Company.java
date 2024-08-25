@@ -1,13 +1,13 @@
 package entities;
 
-public class PessoaJuridica extends Pessoa{
+public class Company extends TaxPayer {
 
     private Integer numberOfEmployees;
 
-    public PessoaJuridica() {
+    public Company() {
         super();
   }
-    public PessoaJuridica(String name, Double anualCome, Integer numberOfEmployees) {
+    public Company(String name, Double anualCome, Integer numberOfEmployees) {
         super(name, anualCome);
         this.numberOfEmployees = numberOfEmployees;
     }

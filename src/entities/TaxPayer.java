@@ -1,13 +1,13 @@
 package entities;
 
-public abstract  class Pessoa {
+public abstract  class TaxPayer {
     protected String name;
     protected Double anualIncome;
 
-    public Pessoa() {
+    public TaxPayer() {
     }
 
-    public Pessoa(String name, Double anualCome) {
+    public TaxPayer(String name, Double anualCome) {
         this.name = name;
         this.anualIncome = anualCome;
     }

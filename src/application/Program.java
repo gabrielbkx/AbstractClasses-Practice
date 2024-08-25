@@ -1,8 +1,8 @@
 package application;
 
-import entities.Pessoa;
-import entities.PessoaFisica;
-import entities.PessoaJuridica;
+import entities.TaxPayer;
+import entities.Individual;
+import entities.Company;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +13,7 @@ public class Program {
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);
 
-        List<Pessoa> list = new ArrayList<>();
+        List<TaxPayer> list = new ArrayList<>();
 
         Scanner sc = new Scanner(System.in);
 
@@ -33,7 +33,7 @@ public class Program {
                 double anualIncome = sc.nextDouble();
                 System.out.print("Health expenditures: ");
                 double healthExpenditures = sc.nextDouble();
-                list.add( new PessoaFisica(name, anualIncome, healthExpenditures));
+                list.add( new Individual(name, anualIncome, healthExpenditures));
             }else {
                 System.out.print("Name: ");
                 String name = sc.next();
@@ -41,7 +41,7 @@ public class Program {
                 double anualIncome = sc.nextDouble();
                 System.out.print("Number of employees:");
                 int numOfEmployees = sc.nextInt();
-                list.add(new PessoaJuridica(name, anualIncome, numOfEmployees));
+                list.add(new Company(name, anualIncome, numOfEmployees));
             }
 
         }
@@ -49,7 +49,7 @@ public class Program {
         System.out.println("TAXES PAID: ");
         double tottax = 0.0;
 
-        for (Pessoa p : list) {
+        for (TaxPayer p : list) {
             System.out.println(p.getName() + ": " + "$ " + String.format("%.2f",p.tax()));
             tottax += p.tax();
         }
